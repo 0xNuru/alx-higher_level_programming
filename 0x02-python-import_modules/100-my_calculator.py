@@ -6,9 +6,6 @@ if __name__ == "__main__":
     from calculator_1 import add, sub, mul, div
 
     argc = len(argv)
-    a = int(argv[1])
-    b = int(argv[3])
-    op = str(argv[2])
     ops = ["+", "-", "*", "/"]
 
     if (argc != 4):
@@ -19,13 +16,17 @@ if __name__ == "__main__":
         print("Unknown operator. Available operators: +, -, * and /")
         exit(1)
 
+    a = int(argv[1])
+    b = int(argv[3])
+    op = str(argv[2])
+
     if (op == '+'):
         result = add(int(a), int(b))
 
     elif (op == '-'):
         result = sub(int(a), int(b))
 
-    elif (op == "*"):
+    elif (op == '*'):
         result = mul(int(a), int(b))
     else:
         result = div(int(a), int(b))
