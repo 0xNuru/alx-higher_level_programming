@@ -13,5 +13,8 @@ if __name__ == "__main__":
         print("{} arguments:".format(argc))
     
     if argc >= 1:
-        for i in range(1, argc + 1):
-            print("{}: {}".format(i, sys.argv[i]))
+        i = 0
+        for arg in sys.argv:
+            if i:
+                print("{}: {}".format(i, sys.argv[i]))
+            i += 1
