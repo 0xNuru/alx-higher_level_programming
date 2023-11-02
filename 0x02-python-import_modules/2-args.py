@@ -11,7 +11,7 @@ if __name__ == "__main__":
         print("{} argument:".format(argc))
     else:
         print("{} arguments:".format(argc))
-    
+
     if argc >= 1:
         i = 0
         for arg in sys.argv:
