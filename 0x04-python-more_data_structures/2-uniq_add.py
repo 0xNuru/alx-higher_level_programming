@@ -11,6 +11,7 @@ Returns:
     bool: result of the summation of all unique elements
 """
 
+
 def uniq_add(my_list=[]):
     new_set = set(my_list)
     result = 0
