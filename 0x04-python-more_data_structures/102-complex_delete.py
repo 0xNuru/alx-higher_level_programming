@@ -1,11 +1,11 @@
 #!/usr/bin/python3
 
 def complex_delete(a_dictionary, value):
-    list_view = a_dictionary.keys()
-    list_keys = list(list_view)
-
-    for value in list_keys:
-        if value == a_dictionary.get(value):
-            del a_dictionary[value]
-
-    return (a_dictionary)
+     if a_dict is None:
+        return None
+    del_key = None
+    keys = tuple(a_dict.keys())
+    for key in keys:
+        if a_dict[key] == value:
+            del a_dict[key]
+    return a_dict
