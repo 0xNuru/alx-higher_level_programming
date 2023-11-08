@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 
-def complex_delete(a_dictionary, value):
-     if a_dict is None:
+def complex_delete(a_dict, value):
+    if a_dict is None:
         return None
     del_key = None
     keys = tuple(a_dict.keys())
