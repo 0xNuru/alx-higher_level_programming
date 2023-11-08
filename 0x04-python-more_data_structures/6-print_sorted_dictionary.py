@@ -11,6 +11,7 @@ Returns:
     None
 """
 
+
 def print_sorted_dictionary(a_dictionary):
     keys_view = list(a_dictionary.keys())
     sorted_view = sorted(keys_view)
