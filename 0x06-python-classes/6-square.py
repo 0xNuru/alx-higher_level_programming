@@ -1,3 +1,6 @@
+#!/usr/bin/python3
+"""A python module that contains a sqaure class"""
+
 class Square:
     """A square class"""
     def __init__(self, size=0, position=(0, 0)):
