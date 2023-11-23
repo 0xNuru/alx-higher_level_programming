@@ -1,4 +1,5 @@
 #!/usr/bin/python3
+"""This module contains a Node class and a SLL class"""
 
 
 class Node:
