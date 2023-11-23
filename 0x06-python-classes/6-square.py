@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """A python module that contains a sqaure class"""
 
+
 class Square:
     """A square class"""
     def __init__(self, size=0, position=(0, 0)):
@@ -58,7 +59,6 @@ class Square:
             raise TypeError("position must be a tuple of 2 positive integers")
 
         self.__position = value
-
 
     def my_print(self):
         """A function that prints the sq"""
