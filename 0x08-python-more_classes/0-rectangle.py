@@ -1,4 +1,4 @@
-#!usr/bin/python3
+#!/usr/bin/python3
 """This module contains a Rectangle class that defines a rectangle"""
 
 class Rectangle:
