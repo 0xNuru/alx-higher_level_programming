@@ -4,5 +4,15 @@ instance of a specified class"""
 
 
 def is_same_class(obj, a_class):
-    """A function to check isinstance"""
+    """
+    Desc:
+        check if an obj is exactly an instance of a class
+
+    Args:
+        obj (any): Object
+        a_class (type): the class to be matched
+
+    Returns:
+        bool: True if match, otherwise false
+    """
     return type(obj) is a_class
