@@ -2,6 +2,7 @@
 """This module contains a Rectangle class that inherits from BaseGeo"""
 BaseGeometry = __import__("7-base_geometry").BaseGeometry
 
+
 class Rectangle(BaseGeometry):
     def __init__(self, width, height):
         self.integer_validator("width", width)
