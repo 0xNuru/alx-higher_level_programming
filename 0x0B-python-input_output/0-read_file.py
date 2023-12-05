@@ -11,4 +11,4 @@ def read_file(filename=""):
         filename (file): path of the file opened
     """
     with open(filename, encoding='utf-8') as file:
-        print(file.read())
+        print(file.read(), end="")
