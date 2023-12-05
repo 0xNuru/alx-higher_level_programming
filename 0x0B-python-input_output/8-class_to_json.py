@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """This module contains function that returns the dict description"""
 
+
 def class_to_json(obj):
     """
     Desc:
