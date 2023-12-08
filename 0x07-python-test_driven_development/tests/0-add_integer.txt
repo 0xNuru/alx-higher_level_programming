@@ -1,0 +1,31 @@
+The ``Addition`` module
+=======================
+
+Import add integer
+>>> add_integer = __import__('0-add_integer').add_integer
+
+>>> add_integer(0, 8)
+8
+
+>>> add_integer(0, "dd")
+Traceback (most recent call last):
+	...
+TypeError: b must be an integer
+
+>>> add_integer(-9, -9)
+-18
+
+>>> add_integer(999, 999)
+1998
+
+>>> add_integer(0, 0)
+0
+
+>>> add_integer(+9, +9)
+18
+
+>>> add_integer(-0, -0)
+0
+
+>>> add_integer(-0, +0)
+0
