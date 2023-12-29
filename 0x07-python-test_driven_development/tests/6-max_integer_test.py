@@ -19,10 +19,13 @@ class TestMaxInteger(unittest.TestCase):
         result = max_integer([-1, -2, -3, -4])
         self.assertEqual(result, -1)
 
+        result = max_integer([-1, 2, 3, 4])
+        self.assertEqual(result, 4)
+
     def test_float(self):
         """Test float list"""
-        result = max_integer([1.0, 2.5, 3.9, 4.2])
-        self.assertEqual(result, 4.2)
+        result = max_integer([1.0, 2.5, 8.8, 3.9, 4.2])
+        self.assertEqual(result, 8.8)
 
         #test negative float
         result = max_integer([-1.9, -2.3, -3.2, -4.1])
@@ -37,6 +40,10 @@ class TestMaxInteger(unittest.TestCase):
         self.assertEqual(max_integer(['art', 'bat', 'cat', 'dart']), 'dart')
         self.assertEqual(max_integer('Nuru'), 'u')
 
+    def test_int_list(self):
+        """Test singleton"""
+        result = max_integer([4])
+        self.assertEqual(result, 4)
 
 
 
