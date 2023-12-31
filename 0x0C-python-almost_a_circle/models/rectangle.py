@@ -70,4 +70,4 @@ class Rectangle(Base):
     def display(self):
         """print a graphical repr of rectangle with '#'"""
         for row in range(self.height):
-                print('#' * self.width)
+            print('#' * self.width)
