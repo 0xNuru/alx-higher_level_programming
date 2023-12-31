@@ -404,6 +404,36 @@ class TestRectangleAttrOrder(unittest.TestCase):
         with self.assertRaisesRegex(TypeError, "x must be an integer"):
             Rectangle(98, 99, "invalid x", "invalid y")
 
+class TestRectangleArea(unittest.TestCase):
+    """Test the area() method"""
+
+    def test_standard_input(self):
+        r1 = Rectangle(10, 20)
+        self.assertEqual(r1.area(), 200)
+
+    def test_singleton(self):
+        r1 = Rectangle(1, 1)
+        self.assertEqual(r1.area(), 1)
+
+    def test_zero_area(self):
+        with self.assertRaises(ValueError):
+            r1 = Rectangle(0, 0)
+            self.assertEqual(r1.area(), 0)
+
+    def test_large_area(self):
+        r = Rectangle(999999999999999, 999999999999999999, 0, 0, 1)
+        self.assertEqual(999999999999998999000000000000001, r.area())
+
+    def test_changed_attributes(self):
+        r = Rectangle(9, 10, 3, 14, 31)
+        r.width = 7
+        r.height = 14
+        self.assertEqual(98, r.area())
+
+    def test_area_one_arg(self):
+        r = Rectangle(2, 10, 1, 1, 1)
+        with self.assertRaises(TypeError):
+            r.area(1)
 
 
 if __name__ == "__main__":
