@@ -49,6 +49,19 @@ class TestBaseClass(unittest.TestCase):
     def test_kwargs(self):
         b1 = Base(id=99)
         self.assertEqual(b1.id, 99)
+    
+    def test_none(self):
+        b1 = Base(None)
+        self.assertEqual(b1.id, 1)
+    
+    def mod_id(self):
+        b1 = Base(2)
+        b1.id = 99
+        self.assertEqual(b1.id, 99)
+    
+    def test_nb_instances_private(self):
+        with self.assertRaises(AttributeError):
+            print(Base(12).__nb_instances)
 
 
 if __name__ == "__main__":
