@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 """This module contains Rectangle class"""
 
-from base import Base
+from models.base import Base
 
 
 class Rectangle(Base):
@@ -37,7 +37,7 @@ class Rectangle(Base):
     def x(self):
         """getter for x"""
         return self.__x
-    @wx.setter
+    @x.setter
     def x(self, value):
         """setter for x"""
         self.__x = value
