@@ -59,7 +59,7 @@ class TestRectangleClass(unittest.TestCase):
 
         #test three args
         r3 = Rectangle(10, 20, 1)
-        self.assertEqual(r3.x, 1)
+        self.assertEqual(r3.id, 2)
 
     def test_privacy(self):
         with self.assertRaises(AttributeError):

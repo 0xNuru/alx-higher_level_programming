@@ -21,3 +21,20 @@ class Square(Rectangle):
     def __str__(self):
         """Override str representation"""
         return f"[Square] ({self.id}) {self.x}/{self.y} - {self.width}"
+
+    @property
+    def size(self):
+        """size getter method
+        return:
+            size sq
+        """
+        return self.width
+
+    @size.setter
+    def size(self, value):
+        """width and height setter method
+        args:
+            value: size value
+        """
+        self.width = value
+        self.height = value
