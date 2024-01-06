@@ -78,3 +78,10 @@ class Rectangle(Base):
         """Override str representation"""
         return f"[Rectangle] ({self.id}) {self.x}/{self.y} " \
             f"- {self.width}/{self.height}"
+
+    def update(self, *args):
+        """Update the attrs"""
+        keys = ["id", "width", "height", "x", "y"]
+        for key, arg in zip(keys, args):
+            setattr(self, key, arg)
+
