@@ -84,4 +84,3 @@ class Rectangle(Base):
         keys = ["id", "width", "height", "x", "y"]
         for key, arg in zip(keys, args):
             setattr(self, key, arg)
-
