@@ -91,5 +91,5 @@ class Rectangle(Base):
 
     def to_dictionary(self):
         """Returns the dict repr of Rectangle"""
-        keys= ["x", "y", "id", "height", "width"]
+        keys = ["x", "y", "id", "height", "width"]
         return {key: getattr(self, key) for key in keys}
