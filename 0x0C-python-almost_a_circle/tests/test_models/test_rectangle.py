@@ -2,6 +2,8 @@
 """This module contains tests for the rectangle class"""
 
 import unittest
+import io
+import sys
 from models.rectangle import Rectangle
 from models.base import Base
 
@@ -434,6 +436,104 @@ class TestRectangleArea(unittest.TestCase):
         r = Rectangle(2, 10, 1, 1, 1)
         with self.assertRaises(TypeError):
             r.area(1)
+
+class TestRectangleDisplay(unittest.TestCase):
+    """Test the display() method"""
+
+    @staticmethod
+    def stdout_buffer(rectangle):
+        """
+        Returns text printed to stdout.
+
+        Args:
+            rectangle (Rectangle): The Rectangle to print to stdout.
+        Returns:
+            The text printed to stdout
+        """
+        
+        #create a buffer to store the output
+        buffer = io.StringIO()
+
+        #redirect stdout to the buffer
+        sys.stdout = buffer
+        
+        rectangle.display()
+        
+        # Restore sys.stdout to its original state
+        sys.stdout = sys.__stdout__
+
+        return buffer
+
+    def test_standard_display(self):
+        r = Rectangle(2, 3)
+        output = TestRectangleDisplay.stdout_buffer(r)
+        self.assertEqual(output.getvalue(), "##\n##\n##\n")
+
+    def test_standard_display_plus(self):
+        r = Rectangle(2, 4)
+        output = TestRectangleDisplay.stdout_buffer(r)
+        self.assertEqual(output.getvalue(), "##\n##\n##\n##\n")
+
+    def test_display_singleton(self):
+        r = Rectangle(1,1)
+        output = TestRectangleDisplay.stdout_buffer(r)
+        self.assertEqual(output.getvalue(), "#\n")
+        
+
+class TestRectangle__str__(unittest.TestCase):
+    """Test string repr of the class"""
+
+    @staticmethod
+    def stdout_buffer(rectangle):
+        """
+        Returns text printed to stdout.
+
+        Args:
+            rectangle (Rectangle): The Rectangle to print to stdout.
+        Returns:
+            The text printed to stdout
+        """
+
+        buffer = io.StringIO()
+        sys.stdout = buffer
+
+        print(rectangle)
+        
+        sys.stdout = sys.__stdout__
+
+        return buffer
+
+    def test_standard__str__(self):
+        r = Rectangle(4, 6, 2, 1, 12)
+        output = TestRectangle__str__.stdout_buffer(r)
+        self.assertEqual(output.getvalue(), "[Rectangle] (12) 2/1 - 4/6\n")
+
+    def test_str_method_width_height_x(self):
+        r = Rectangle(5, 5, 1)
+        correct = "[Rectangle] ({}) 1/0 - 5/5".format(r.id)
+        self.assertEqual(correct, r.__str__())
+
+    def test_str_method_width_height_x_y(self):
+        r = Rectangle(1, 8, 2, 4)
+        correct = "[Rectangle] ({}) 2/4 - 1/8".format(r.id)
+        self.assertEqual(correct, str(r))
+
+    def test_str_method_width_height_x_y_id(self):
+        r = Rectangle(13, 21, 2, 4, 7)
+        self.assertEqual("[Rectangle] (7) 2/4 - 13/21", str(r))
+
+    def test_str_method_changed_attributes(self):
+        r = Rectangle(7, 7, 0, 0, [4])
+        r.width = 15
+        r.height = 1
+        r.x = 8
+        r.y = 10
+        self.assertEqual("[Rectangle] ([4]) 8/10 - 15/1", str(r))
+    
+    def test_str_method_one_arg(self):
+        r = Rectangle(1, 2, 3, 4, 5)
+        with self.assertRaises(TypeError):
+            r.__str__(1)
 
 
 if __name__ == "__main__":
