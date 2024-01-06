@@ -73,7 +73,7 @@ class TestRectangleClass(unittest.TestCase):
 
         with self.assertRaises(AttributeError):
             y = Rectangle(10, 20, 1, 2, 9).__y
-
+    
     def test_getters(self):
         r1 = Rectangle(10, 20, 1, 2, 99)
         self.assertEqual(r1.width, 10)
