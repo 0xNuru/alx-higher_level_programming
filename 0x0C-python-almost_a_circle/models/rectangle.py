@@ -74,7 +74,6 @@ class Rectangle(Base):
         for row in range(self.height):
             print("{}{}".format(" " * self.x, "#" * self.width))
 
-
     def __str__(self):
         """Override str representation"""
         return f"[Rectangle] ({self.id}) {self.x}/{self.y} " \
