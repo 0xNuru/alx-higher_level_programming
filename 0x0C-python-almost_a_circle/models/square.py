@@ -6,7 +6,7 @@ from models.rectangle import Rectangle
 
 class Square(Rectangle):
     """This class defines the rectangle object"""
-    
+
     def __init__(self, size, x=0, y=0, id=None):
         """Initialize a new Square.
 
@@ -21,4 +21,3 @@ class Square(Rectangle):
     def __str__(self):
         """Override str representation"""
         return f"[Square] ({self.id}) {self.x}/{self.y} - {self.width}"
-
