@@ -2,6 +2,7 @@
 """This module contains a Base class"""
 import json
 
+
 class Base:
     """This is a Base class"""
 
@@ -16,8 +17,8 @@ class Base:
 
     @staticmethod
     def to_json_string(list_dictionaries):
-        """the JSON string repr of a list of dicts"""
-        if list_dictionaries is None  or list_dictionaries == []:
+        """The JSON string repr of a list of dicts"""
+        if list_dictionaries is None or list_dictionaries == []:
             return "[]"
         else:
             return json.dumps(list_dictionaries)
