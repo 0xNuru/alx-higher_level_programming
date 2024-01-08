@@ -29,7 +29,8 @@ class Base:
         writes the JSON string representation of list_objs to a file
 
         Args:
-            cls: the class itself i.e the class that calls the method (since this is a classmethod)
+            cls: the class itself i.e the class
+            that calls the method (since this is a classmethod)
             list_objs: list of objects
         """
         filename = cls.__name__ + ".json"
