@@ -11,7 +11,8 @@ if __name__ == "__main__":
     password = argv[2]
     db = "hbtn_0e_6_usa"
 
-    engine = create_engine(f"mysql+mysqldb://{username}:{password}@localhost:3306/{db}", pool_pre_ping=True)
+    engine = create_engine(f"mysql+mysqldb://{username}:{password}@localhost" \
+                           f":3306/{db}", pool_pre_ping=True)
     Base.metadata.create_all(engine)
     Session = sessionmaker(bind=engine)
     session = Session()
