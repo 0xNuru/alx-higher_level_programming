@@ -18,8 +18,7 @@ if __name__ == "__main__":
     Session = sessionmaker(bind=engine)
     session = Session()
 
-    rows = session.query(State).all()
-    for state in rows:
-        print("{state.id}: {state.name}")
-        for city in state.cities:
-            print("    {city.id}: {city.name}")
+    new_state = State(name="California")
+    new_state.cities = [City(name="San Francisco")]
+    session.add(new_state)
+    session.commit()
