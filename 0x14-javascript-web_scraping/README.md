@@ -1,1 +1,1 @@
-This dir contains my files for learning web scraping
+This dir contains my files for learning web scraping. I wrote this readme using my writeme.js script
