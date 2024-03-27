@@ -2,7 +2,7 @@
 // a script that prints the number of movies where “Wedge Antilles” is present
 const request = require('request');
 
-url = process.argv[2];
+const url = process.argv[2];
 request(url, function (error, response, body) {
   if (!error) {
     const results = JSON.parse(body).results;
